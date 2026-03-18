@@ -1,0 +1,359 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Сведения об образовательной организации - АПК{% endblock %}
+
+{% block content %}
+<!-- Заголовок страницы -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h1 class="display-4 fw-bold text-center">Сведения об образовательной организации</h1>
+    </div>
+</section>
+
+<!-- Навигация по странице (оглавление) -->
+<section class="py-4">
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-md-4"><a href="#basic" class="btn btn-outline-primary w-100">Основные сведения</a></div>
+            <div class="col-md-4"><a href="#structure" class="btn btn-outline-primary w-100">Структура и управление</a></div>
+            <div class="col-md-4"><a href="#docs" class="btn btn-outline-primary w-100">Документы</a></div>
+            <div class="col-md-4"><a href="#education" class="btn btn-outline-primary w-100">Образование</a></div>
+            <div class="col-md-4"><a href="#standards" class="btn btn-outline-primary w-100">Стандарты</a></div>
+            <div class="col-md-4"><a href="#directorate" class="btn btn-outline-primary w-100">Руководство</a></div>
+            <div class="col-md-4"><a href="#teachers" class="btn btn-outline-primary w-100">Педсостав</a></div>
+            <div class="col-md-4"><a href="#material" class="btn btn-outline-primary w-100">Материально-техническое</a></div>
+            <div class="col-md-4"><a href="#accessible" class="btn btn-outline-primary w-100">Доступная среда</a></div>
+            <div class="col-md-4"><a href="#paid" class="btn btn-outline-primary w-100">Платные услуги</a></div>
+            <div class="col-md-4"><a href="#finance" class="btn btn-outline-primary w-100">Финансово-хозяйственная</a></div>
+            <div class="col-md-4"><a href="#vacancies" class="btn btn-outline-primary w-100">Вакантные места</a></div>
+            <div class="col-md-4"><a href="#scholarships" class="btn btn-outline-primary w-100">Стипендии</a></div>
+            <div class="col-md-4"><a href="#international" class="btn btn-outline-primary w-100">Международное</a></div>
+            <div class="col-md-4"><a href="#food" class="btn btn-outline-primary w-100">Питание</a></div>
+        </div>
+    </div>
+</section>
+
+<!-- Основные сведения -->
+<section id="basic" class="py-4">
+    <div class="container">
+        <h2 class="fw-bold mb-4">Основные сведения</h2>
+        <div class="card">
+            <div class="card-body">
+                <p><strong>Полное наименование:</strong> Государственное бюджетное профессиональное образовательное учреждение "Арзамасский приборостроительный колледж имени П.И. Пландина"</p>
+                <p><strong>Сокращенное наименование:</strong> ГБПОУ "АПК им. П.И. Пландина"</p>
+                <p><strong>Дата создания:</strong> 1947 год</p>
+                <p><strong>Учредитель:</strong> Министерство образования и науки Нижегородской области</p>
+                <p><strong>Место нахождения:</strong> 607220, Нижегородская область, г. Арзамас, ул. Жуковского, д. 2</p>
+                <p><strong>Филиалы:</strong> отсутствуют</p>
+                <p><strong>Режим работы:</strong> пн-пт: 8:00 - 17:00, сб: 8:00 - 14:00</p>
+                <p><strong>График работы:</strong> пн-пт: 8.00 - 16.30, сб: 8.00 - 13.00</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Структура и органы управления -->
+<section id="structure" class="py-4 bg-light">
+    <div class="container">
+        <h2 class="fw-bold mb-4">Структура и органы управления</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5>Органы управления:</h5>
+                <ul>
+                    <li>Директор — Ермолаев Сергей Александрович</li>
+                    <li>Заместитель директора по учебной работе — Титова Ирина Борисовна</li>
+                    <li>Заместитель директора по воспитательной работе — [ФИО]</li>
+                    <li>Заместитель директора по производственной работе — [ФИО]</li>
+                    <li>Заместитель директора по административно-хозяйственной работе — [ФИО]</li>
+                </ul>
+                <h5 class="mt-4">Структурные подразделения:</h5>
+                <ul>
+                    <li>Учебная часть</li>
+                    <li>Воспитательный отдел</li>
+                    <li>Производственный отдел</li>
+                    <li>Бухгалтерия</li>
+                    <li>Библиотека</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Документы -->
+<section id="docs" class="py-4">
+    <div class="container">
+        <h2 class="fw-bold mb-4">Документы</h2>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action">Устав колледжа (PDF)</a>
+            <a href="#" class="list-group-item list-group-item-action">Лицензия на осуществление образовательной деятельности (PDF)</a>
+            <a href="#" class="list-group-item list-group-item-action">Свидетельство о государственной аккредитации (PDF)</a>
+            <a href="#" class="list-group-item list-group-item-action">Правила внутреннего распорядка (PDF)</a>
+            <a href="#" class="list-group-item list-group-item-action">Коллективный договор (PDF)</a>
+            <a href="#" class="list-group-item list-group-item-action">Отчет о самообследовании (PDF)</a>
+            <a href="#" class="list-group-item list-group-item-action">Предписания надзорных органов (PDF)</a>
+        </div>
+        <p class="text-muted mt-2">* Документы будут добавлены позже</p>
+    </div>
+</section>
+
+<!-- Образование -->
+<section id="education" class="py-4 bg-light">
+    <div class="container">
+        <h2 class="fw-bold mb-4">Образование</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5>Реализуемые образовательные программы:</h5>
+                <ul>
+                    <li>09.02.11 Разработка и управление программным обеспечением</li>
+                    <li>11.02.16 Монтаж, техническое обслуживание и ремонт электронных приборов</li>
+                    <li>12.02.01 Авиационные приборы и комплексы</li>
+                    <li>15.02.16 Технология машиностроения</li>
+                    <li>38.02.01 Экономика и бухгалтерский учет</li>
+                </ul>
+                <p><strong>Форма обучения:</strong> очная</p>
+                <p><strong>Сроки обучения:</strong> 2 года 10 месяцев — 3 года 10 месяцев</p>
+                <p><strong>Язык обучения:</strong> русский</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Образовательные стандарты -->
+<section id="standards" class="py-4">
+    <div class="container">
+        <h2 class="fw-bold mb-4">Образовательные стандарты и требования</h2>
+        <div class="card">
+            <div class="card-body">
+                <p>Обучение ведется в соответствии с Федеральными государственными образовательными стандартами среднего профессионального образования (ФГОС СПО).</p>
+                <ul>
+                    <li>ФГОС СПО 09.02.11 — <a href="#">скачать</a></li>
+                    <li>ФГОС СПО 11.02.16 — <a href="#">скачать</a></li>
+                    <li>ФГОС СПО 12.02.01 — <a href="#">скачать</a></li>
+                    <li>ФГОС СПО 15.02.16 — <a href="#">скачать</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Руководство -->
+<section id="directorate" class="py-4 bg-light">
+    <div class="container">
+        <h2 class="fw-bold mb-4">Руководство</h2>
+        
+        <!-- Директор -->
+        <div class="card mb-4 shadow-sm border-0 overflow-hidden" data-aos="fade-up">
+            <div class="row g-0">
+                <div class="col-md-3">
+                    <img src="{% static 'images/director.jpg' %}" alt="Ермолаев С.А." class="director-photo">
+                </div>
+                <div class="col-md-9">
+                    <div class="card-body p-4">
+                        <h3 class="fw-bold">Ермолаев Сергей Александрович</h3>
+                        <p class="text-primary mb-2"><strong>Должность:</strong> Директор</p>
+                        <p class="mb-2"><strong>Телефон:</strong> (831) 477-02-37</p>
+                        <p class="mb-2"><strong>E-mail:</strong> aprc2@yandex.ru</p>
+                        <p class="mb-2"><strong>Ученая степень:</strong> Кандидат педагогических наук</p>
+                        <p class="mb-2"><strong>Звания:</strong> Заслуженный учитель РФ, Почетный работник среднего профессионального образования РФ, Отличник народного просвещения РФ</p>
+                        <p class="mb-0"><strong>График работы:</strong> пн: 8.00-16.30, вт-пт: 8.00-16.00, сб: 8.00-10.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Заместители -->
+        <div class="card shadow-sm border-0 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+            <div class="row g-0">
+                <div class="col-md-3">
+                    <img src="{% static 'images/deputy.jpg' %}" alt="Титова И.Б." class="director-photo">
+                </div>
+                <div class="col-md-9">
+                    <div class="card-body p-4">
+                        <h3 class="fw-bold">Титова Ирина Борисовна</h3>
+                        <p class="text-primary mb-2"><strong>Должность:</strong> Заместитель директора по учебной работе</p>
+                        <p class="mb-2"><strong>Телефон:</strong> (831) 477-02-37</p>
+                        <p class="mb-2"><strong>E-mail:</strong> aprc2@yandex.ru</p>
+                        <p class="mb-2"><strong>Звания:</strong> Заслуженный учитель РФ, Почетный работник среднего профессионального образования РФ, Отличник народного просвещения РФ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Педагогический состав -->
+<section id="teachers" class="py-4">
+    <div class="container">
+        <h2 class="fw-bold mb-4">Педагогический состав</h2>
+        <p class="lead">Всего преподавателей: 50+</p>
+        
+        <div class="row g-4">
+            <!-- Пример карточки преподавателя (можно добавить много таких) -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5>Иванов Иван Петрович</h5>
+                        <p class="text-muted">Преподаватель специальных дисциплин</p>
+                        <p>Стаж: 25 лет</p>
+                        <p>Квалификация: Высшая категория</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5>Петрова Мария Сергеевна</h5>
+                        <p class="text-muted">Преподаватель информатики</p>
+                        <p>Стаж: 15 лет</p>
+                        <p>Квалификация: Первая категория</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="text-muted mt-3">* Полный список будет добавлен позже</p>
+    </div>
+</section>
+
+<!-- Материально-техническое обеспечение -->
+<section id="material" class="py-4 bg-light">
+    <div class="container">
+        <h2 class="fw-bold mb-4">Материально-техническое обеспечение</h2>
+        <div class="card">
+            <div class="card-body">
+                <ul>
+                    <li>20 учебных кабинетов</li>
+                    <li>8 лабораторий (электроники, программирования, технологии)</li>
+                    <li>2 компьютерных класса</li>
+                    <li>Библиотека с читальным залом</li>
+                    <li>Спортивный зал</li>
+                    <li>Стадион (ул. Кирова, 56а)</li>
+                    <li>Мастерские для практических занятий</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Доступная среда -->
+<section id="accessible" class="py-4">
+    <div class="container">
+        <h2 class="fw-bold mb-4">Доступная среда</h2>
+        <div class="card">
+            <div class="card-body">
+                <p>В колледже созданы условия для обучения лиц с ограниченными возможностями здоровья:</p>
+                <ul>
+                    <li>Пандусы при входе</li>
+                    <li>Адаптированные учебные программы</li>
+                    <li>Индивидуальное сопровождение</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Платные образовательные услуги -->
+<section id="paid" class="py-4 bg-light">
+    <div class="container">
+        <h2 class="fw-bold mb-4">Платные образовательные услуги</h2>
+        <div class="card">
+            <div class="card-body">
+                <p>Колледж оказывает платные образовательные услуги:</p>
+                <ul>
+                    <li>Подготовительные курсы для поступающих</li>
+                    <li>Обучение по дополнительным программам</li>
+                    <li>Повышение квалификации</li>
+                </ul>
+                <p>Стоимость уточнять в учебной части.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Финансово-хозяйственная деятельность -->
+<section id="finance" class="py-4">
+    <div class="container">
+        <h2 class="fw-bold mb-4">Финансово-хозяйственная деятельность</h2>
+        <div class="card">
+            <div class="card-body">
+                <p>Информация о финансово-хозяйственной деятельности доступна в разделе "Документы" (отчет о самообследовании).</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Вакантные места -->
+<section id="vacancies" class="py-4 bg-light">
+    <div class="container">
+        <h2 class="fw-bold mb-4">Вакантные места для приема (перевода)</h2>
+        <div class="card">
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Специальность</th>
+                            <th>Бюджетные места</th>
+                            <th>Платные места</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>09.02.11 Программирование</td>
+                            <td>50</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>11.02.16 Электроника</td>
+                            <td>50</td>
+                            <td>5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Стипендии -->
+<section id="scholarships" class="py-4">
+    <div class="container">
+        <h2 class="fw-bold mb-4">Стипендии и меры поддержки</h2>
+        <div class="card">
+            <div class="card-body">
+                <p>Студентам выплачиваются:</p>
+                <ul>
+                    <li>Академическая стипендия</li>
+                    <li>Социальная стипендия</li>
+                    <li>Именные стипендии</li>
+                    <li>Материальная помощь</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Международное сотрудничество -->
+<section id="international" class="py-4 bg-light">
+    <div class="container">
+        <h2 class="fw-bold mb-4">Международное сотрудничество</h2>
+        <div class="card">
+            <div class="card-body">
+                <p>На данный момент международное сотрудничество не осуществляется.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Организация питания -->
+<section id="food" class="py-4">
+    <div class="container">
+        <h2 class="fw-bold mb-4">Организация питания</h2>
+        <div class="card">
+            <div class="card-body">
+                <p>В колледже работает столовая и буфет.</p>
+                <p><strong>Режим работы столовой:</strong> пн-пт 9:00-16:00</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

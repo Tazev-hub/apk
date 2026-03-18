@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Контакты - АПК{% endblock %}
+
+{% block content %}
+<!-- Заголовок -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold" data-aos="fade-up">Контакты</h1>
+        <p class="lead" data-aos="fade-up" data-aos-delay="100">Как с нами связаться</p>
+    </div>
+</section>
+
+<!-- Основная информация -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm border-0" data-aos="fade-up">
+                    <div class="card-body p-5">
+                        <h2 class="text-center fw-bold mb-5">Наши контакты</h2>
+                        
+                        <div class="row g-4">
+                            <!-- Адрес -->
+                            <div class="col-md-4 text-center">
+                                <span class="display-4">📍</span>
+                                <h5 class="mt-3">Адрес</h5>
+                                <p class="text-muted">Нижегородская область,<br>г. Арзамас, ул. Жуковского, д. 2</p>
+                            </div>
+                            
+                            <!-- Телефоны -->
+                            <div class="col-md-4 text-center">
+                                <span class="display-4">📞</span>
+                                <h5 class="mt-3">Телефоны</h5>
+                                <p class="text-muted mb-1">Приёмная комиссия:<br><strong>8 (83147) 7-02-37</strong></p>
+                                <p class="text-muted mb-1">Учебная часть:<br><strong>8 (83147) 7-03-45</strong></p>
+                                <p class="text-muted">Директор:<br><strong>8 (83147) 7-01-23</strong></p>
+                            </div>
+                            
+                            <!-- Email -->
+                            <div class="col-md-4 text-center">
+                                <span class="display-4">✉️</span>
+                                <h5 class="mt-3">Email</h5>
+                                <p class="text-muted">
+                                    <a href="mailto:apk_suz@mail.52gov.ru" class="text-decoration-none">
+                                        apk_suz@mail.52gov.ru
+                                    </a>
+                                </p>
+                                <p class="text-muted small mt-3">По всем вопросам</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Карта -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4" data-aos="fade-up">Как нас найти</h2>
+        <div class="ratio ratio-21x9" data-aos="zoom-in">
+            <iframe src="https://yandex.ru/map-widget/v1/?ll=43.814259%2C55.393801&z=17&pt=43.814259%2C55.393801&mode=search&text=Арзамас%20ул.%20Жуковского%202" 
+                    width="100%" 
+                    height="400" 
+                    frameborder="0"
+                    allowfullscreen="true"
+                    style="border:0">
+            </iframe>
+        </div>
+</section>
+
+<!-- Часы работы -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm text-center" data-aos="fade-up">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">🕒 Часы работы</h3>
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="mb-2"><strong>Пн-Пт:</strong> 8:00 - 17:00</p>
+                                <p class="mb-2"><strong>Суббота:</strong> 9:00 - 14:00</p>
+                            </div>
+                            <div class="col-6">
+                                <p class="mb-2"><strong>Воскресенье:</strong> выходной</p>
+                                <p class="mb-2"><strong>Приёмная комиссия:</strong> пн-пт 9:00-16:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

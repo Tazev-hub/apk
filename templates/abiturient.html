@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Абитуриенту - АПК{% endblock %}
+
+{% block content %}
+<!-- Заголовок страницы -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold" data-aos="fade-up">Абитуриенту 2026</h1>
+        <p class="lead" data-aos="fade-up" data-aos-delay="100">Информация для поступающих</p>
+    </div>
+</section>
+
+<!-- Основная информация о приёме -->
+<section class="py-4">
+    <div class="container">
+        <div class="alert alert-primary" role="alert" data-aos="fade-up">
+            <h4 class="alert-heading">Важно!</h4>
+            <p class="mb-0">Приём в колледж в 2026 году осуществляется на общедоступной основе (без вступительных испытаний) с учетом среднего балла аттестата.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Таблица специальностей -->
+<section class="py-4">
+    <div class="container">
+        <h2 class="fw-bold mb-4" data-aos="fade-up">Специальности</h2>
+        
+        <div class="table-responsive" data-aos="fade-up" data-aos-delay="100">
+            <table class="table table-bordered table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Код и наименование специальности</th>
+                        <th>Уровень образования</th>
+                        <th>Срок обучения</th>
+                        <th>Форма обучения</th>
+                        <th>Бюджетных мест</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>09.02.11</strong> Разработка и управление программным обеспечением</td>
+                        <td>9 классов</td>
+                        <td>3 года 10 мес.</td>
+                        <td>Очная</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td><strong>11.02.16</strong> Монтаж, техническое обслуживание и ремонт электронных приборов и устройств</td>
+                        <td>9 классов</td>
+                        <td>3 года 10 мес.</td>
+                        <td>Очная</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td><strong>12.02.01</strong> Авиационные приборы и комплексы</td>
+                        <td>9 классов</td>
+                        <td>3 года 10 мес.</td>
+                        <td>Очная</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td><strong>15.02.16</strong> Технология машиностроения</td>
+                        <td>9 классов</td>
+                        <td>3 года 10 мес.</td>
+                        <td>Очная</td>
+                        <td>50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Информация об общежитии -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" data-aos="fade-right">
+                <div class="card h-100 border-warning">
+                    <div class="card-body">
+                        <h3 class="card-title text-warning">🏠 Общежитие</h3>
+                        <p class="card-text lead">Колледж не располагает общежитием.</p>
+                        <p class="card-text">Иногородним студентам рекомендуется заранее позаботиться о съемном жилье.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6" data-aos="fade-left">
+                <div class="card h-100 border-success">
+                    <div class="card-body">
+                        <h3 class="card-title text-success">📞 Приёмная комиссия</h3>
+                        <p class="card-text display-6">(83147) 7-18-75</p>
+                        <p class="card-text">Режим работы: пн-пт 9:00 - 16:00</p>
+                        <p class="card-text">сб 9:00 - 13:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Документы для поступления -->
+<section class="py-4">
+    <div class="container">
+        <h2 class="fw-bold mb-4" data-aos="fade-up">Необходимые документы</h2>
+        
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="0">
+                <div class="card h-100 text-center p-3">
+                    <span class="display-1">📄</span>
+                    <h5>Заявление</h5>
+                    <p class="text-muted">Заполняется при подаче</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="card h-100 text-center p-3">
+                    <span class="display-1">🆔</span>
+                    <h5>Паспорт</h5>
+                    <p class="text-muted">Копия + оригинал</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card h-100 text-center p-3">
+                    <span class="display-1">🎓</span>
+                    <h5>Аттестат</h5>
+                    <p class="text-muted">С приложением</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                <div class="card h-100 text-center p-3">
+                    <span class="display-1">📸</span>
+                    <h5>Фото 3x4</h5>
+                    <p class="text-muted">4 штуки</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+                <div class="card h-100 text-center p-3">
+                    <span class="display-1">🩺</span>
+                    <h5>Медицинская справка</h5>
+                    <p class="text-muted">Форма 086-У</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="500">
+                <div class="card h-100 text-center p-3">
+                    <span class="display-1">📋</span>
+                    <h5>СНИЛС</h5>
+                    <p class="text-muted">Копия</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Контакты приёмной комиссии -->
+<section class="py-4 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" data-aos="fade-right">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>📍 Где нас найти</h3>
+                        <p><strong>Адрес:</strong> г. Арзамас, ул. Жуковского, д. 2</p>
+                        <p><strong>Кабинет приёмной комиссии:</strong> № 123 (1 этаж)</p>
+                        <p><strong>Email:</strong> abiturient@apk.ru</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-left">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>🕒 Часы работы</h3>
+                        <p><strong>Понедельник - пятница:</strong> 9:00 - 17:00</p>
+                        <p><strong>Суббота:</strong> 9:00 - 14:00</p>
+                        <p><strong>Воскресенье:</strong> выходной</p>
+                        <p class="text-muted mt-3">* В период приёмной кампании возможны изменения</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Форма связи для абитуриентов -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow border-0" data-aos="fade-up">
+                    <div class="card-body p-5">
+                        <h2 class="text-center fw-bold mb-4">Остались вопросы?</h2>
+                        <p class="text-center lead mb-4">Напишите нам, и мы поможем с выбором специальности и поступлением</p>
+                        
+                        <form id="abiturientForm">
+                            {% csrf_token %}
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">Ваше имя</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Сообщение</label>
+                                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Напишите, какая специальность вас интересует или задайте вопрос о поступлении..." required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100" id="submitBtn">Отправить сообщение</button>
+                                </div>
+                                <div class="col-12">
+                                    <div id="formStatus" class="mt-3"></div>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <div class="text-center mt-4">
+                            <p class="text-muted">Или позвоните нам: <strong>8 (83147) 7-18-75</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

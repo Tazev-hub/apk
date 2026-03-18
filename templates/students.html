@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Студентам - АПК{% endblock %}
+
+{% block content %}
+<!-- Заголовок -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold" data-aos="fade-up">Студентам</h1>
+        <p class="lead" data-aos="fade-up" data-aos-delay="100">Всё для учёбы в одном месте</p>
+    </div>
+</section>
+
+<!-- Вкладки -->
+<section class="py-4">
+    <div class="container">
+        <ul class="nav nav-tabs" id="studentTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="announcements-tab" data-bs-toggle="tab" data-bs-target="#announcements" type="button" role="tab">
+                    📢 Объявления
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="materials-tab" data-bs-toggle="tab" data-bs-target="#materials" type="button" role="tab">
+                    📚 Методички
+                </button>
+            </li>
+        </ul>
+        
+        <div class="tab-content py-4" id="studentTabsContent">
+            <!-- Вкладка с объявлениями -->
+            <div class="tab-pane fade" id="announcements" role="tabpanel">
+                {% if announcements %}
+                    {% for announcement in announcements %}
+                        <div class="card mb-3 {% if announcement.is_pinned %}border-primary{% endif %}" data-aos="fade-up">
+                            <div class="card-body">
+                                {% if announcement.is_pinned %}
+                                    <span class="badge bg-primary mb-2">📌 Закреплено</span>
+                                {% endif %}
+                                <h5 class="card-title">{{ announcement.title }}</h5>
+                                <p class="card-text">{{ announcement.content|linebreaks }}</p>
+                                <small class="text-muted">{{ announcement.created_at|date:"d.m.Y H:i" }}</small>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="text-muted text-center py-5">Пока нет объявлений</p>
+                {% endif %}
+            </div>
+            
+            <!-- Вкладка с методичками -->
+            <div class="tab-pane fade" id="materials" role="tabpanel">
+                {% if materials %}
+                    <div class="row g-4">
+                        {% for material in materials %}
+                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:50 }}">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ material.title }}</h5>
+                                        <p class="card-text text-muted">{{ material.subject }}</p>
+                                        {% if material.description %}
+                                            <p class="card-text">{{ material.description }}</p>
+                                        {% endif %}
+                                        <small class="text-muted">Загружено: {{ material.uploaded_at|date:"d.m.Y" }}</small>
+                                    </div>
+                                    <div class="card-footer bg-transparent">
+                                        <a href="{{ material.file.url }}" class="btn btn-outline-primary" download>Скачать PDF</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="text-muted text-center py-5">Методички пока не загружены</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

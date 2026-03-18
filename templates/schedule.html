@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Расписание - АПК{% endblock %}
+
+{% block content %}
+<!-- Заголовок -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold" data-aos="fade-up">Расписание занятий</h1>
+        <p class="lead" data-aos="fade-up" data-aos-delay="100">Актуальное расписание для всех групп</p>
+    </div>
+</section>
+
+<!-- Текущее расписание -->
+<section class="py-4">
+    <div class="container">
+{% if current %}
+    <div class="card shadow-lg border-0" data-aos="zoom-in">
+        <div class="card-header bg-primary text-white py-3">
+            <h3 class="mb-0">{{ current.title }} на {{ current.date|date:"d.m.Y" }}</h3>
+        </div>
+        <div class="card-body p-0">
+            <!-- Выводим все страницы -->
+            {% for page in current.pages.all %}
+                <div class="schedule-page {% if not forloop.last %}mb-3 pb-3 border-bottom{% endif %}">
+                    <div class="text-center text-muted mb-2">Страница {{ page.page_number }}</div>
+                    <img src="{{ page.image.url }}" class="img-fluid w-100" alt="Расписание страница {{ page.page_number }}">
+                </div>
+            {% endfor %}
+        </div>
+        <div class="card-footer text-muted">
+            Загружено: {{ current.uploaded_at|date:"d.m.Y H:i" }}
+        </div>
+    </div>
+{% else %}
+    <div class="alert alert-info text-center" data-aos="fade-in">
+        <h4>Расписание пока не загружено</h4>
+        <p>Попробуйте зайти позже или обратитесь к старосте</p>
+    </div>
+{% endif %}
+    </div>
+</section>
+
+<!-- Архив расписаний -->
+<!-- Архив расписаний -->
+<!-- Архив расписаний -->
+{% if archive %}
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4" data-aos="fade-up">Архив расписаний</h2>
+        <div class="row g-4">
+            {% for item in archive %}
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:100 }}">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.title }}</h5>
+                            <p class="card-text text-muted">на {{ item.date|date:"d.m.Y" }}</p>
+                            <p class="small text-muted">Страниц: {{ item.pages.count }}</p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="{% url 'schedule_detail' item.id %}" class="btn btn-outline-primary btn-sm">Просмотреть</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}

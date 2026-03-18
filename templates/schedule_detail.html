@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Расписание - АПК{% endblock %}
+
+{% block content %}
+<!-- Заголовок -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold" data-aos="fade-up">Расписание занятий</h1>
+        <p class="lead" data-aos="fade-up" data-aos-delay="100">{{ schedule.title }} на {{ schedule.date|date:"d.m.Y" }}</p>
+    </div>
+</section>
+
+<!-- Блок с расписанием и навигацией -->
+<section class="py-4">
+    <div class="container">
+        <div class="card shadow-lg border-0" data-aos="zoom-in">
+            <div class="card-header bg-primary text-white py-3">
+                <h3 class="mb-0">{{ schedule.title }} на {{ schedule.date|date:"d.m.Y" }}</h3>
+            </div>
+            <div class="card-body p-0">
+                <!-- Контейнер для текущей страницы -->
+                <div id="page-container">
+                    {% if pages %}
+                        {% with current_page=pages.first %}
+                            <div class="schedule-page">
+                                <div class="text-center text-muted mb-2">
+                                    Страница {{ current_page.page_number }} из {{ pages.count }}
+                                </div>
+                                <img src="{{ current_page.image.url }}" class="img-fluid w-100" alt="Расписание страница {{ current_page.page_number }}">
+                            </div>
+                        {% endwith %}
+                    {% else %}
+                        <p class="text-center py-5">Страницы не загружены</p>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <!-- Навигация по страницам -->
+            {% if pages.count > 1 %}
+            <div class="card-footer">
+                <div class="d-flex justify-content-between align-items-center">
+                    <button id="prevPage" class="btn btn-outline-primary" disabled>← Предыдущая</button>
+                    <span id="pageInfo">Страница 1 из {{ pages.count }}</span>
+                    <button id="nextPage" class="btn btn-outline-primary">Следующая →</button>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="{% url 'schedule' %}" class="btn btn-outline-secondary">← К списку расписаний</a>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript для переключения страниц -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const pages = [
+        {% for page in pages %}
+            {
+                number: {{ page.page_number }},
+                url: "{{ page.image.url }}"
+            },
+        {% endfor %}
+    ];
+    
+    if (pages.length <= 1) return; // Не включаем навигацию, если страница одна
+    
+    let currentIndex = 0;
+    const container = document.getElementById('page-container');
+    const prevBtn = document.getElementById('prevPage');
+    const nextBtn = document.getElementById('nextPage');
+    const pageInfo = document.getElementById('pageInfo');
+    
+    function updatePage() {
+        const page = pages[currentIndex];
+        container.innerHTML = `
+            <div class="schedule-page">
+                <div class="text-center text-muted mb-2">
+                    Страница ${page.number} из ${pages.length}
+                </div>
+                <img src="${page.url}" class="img-fluid w-100" alt="Расписание страница ${page.number}">
+            </div>
+        `;
+        
+        pageInfo.textContent = `Страница ${page.number} из ${pages.length}`;
+        
+        // Включаем/отключаем кнопки
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === pages.length - 1;
+    }
+    
+    prevBtn.addEventListener('click', function() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updatePage();
+        }
+    });
+    
+    nextBtn.addEventListener('click', function() {
+        if (currentIndex < pages.length - 1) {
+            currentIndex++;
+            updatePage();
+        }
+    });
+});
+</script>
+
+<style>
+.schedule-page img {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+</style>
+{% endblock %}

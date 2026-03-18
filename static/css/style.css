@@ -1,0 +1,889 @@
+/* ===== 1. ОБНУЛЕНИЕ И ПЕРЕМЕННЫЕ ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #1a4d8c;
+    --accent-color: #e63946;
+    --text-color: #333;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+    --font-main: 'Inter', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ===== 2. ОСНОВНЫЕ ЭЛЕМЕНТЫ ===== */
+main {
+    flex: 1 0 auto;
+    margin-top: 80px;
+}
+
+footer {
+    flex-shrink: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+}
+
+/* ===== 3. ШАПКА И НАВИГАЦИЯ ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.8rem !important;
+    font-weight: 700;
+    margin-right: auto;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: var(--accent-color) !important;
+}
+
+.navbar-nav {
+    margin-left: auto !important;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    padding: 10px 18px !important;
+    margin: 0 3px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(26, 77, 140, 0.1);
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.active {
+    background-color: var(--main-color);
+    color: white !important;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--main-color);
+}
+
+/* Кнопка переключения темы */
+#themeToggle {
+    font-size: 1.3rem;
+    padding: 10px 18px !important;
+    border: none;
+    background: transparent;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+#themeToggle:hover {
+    background-color: rgba(26, 77, 140, 0.1);
+    transform: translateY(-2px);
+}
+
+/* ===== 4. ГЛАВНАЯ СТРАНИЦА ===== */
+.hero {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    margin-top: 70px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-content p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Блок "О колледже" */
+.about-image {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.about-image img {
+    transition: transform 0.5s ease;
+    width: 100%;
+    display: block;
+}
+
+.about-image:hover img {
+    transform: scale(1.1);
+}
+
+/* Карточки специальностей крупные */
+.specialty-card-large {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    height: 100%;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.specialty-card-large:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 50px rgba(0,0,0,0.2) !important;
+}
+
+.specialty-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.specialty-card-large:hover .specialty-card-img {
+    transform: scale(1.05);
+}
+
+.specialty-card-body {
+    padding: 25px;
+}
+
+.specialty-badge {
+    display: inline-block;
+    background: var(--main-color);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.specialty-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Карточки партнёров крупные */
+.partner-card-large {
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.partner-card-large:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 30px 50px rgba(0,0,0,0.15) !important;
+}
+
+.partner-card-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.partner-card-large:hover .partner-card-img {
+    transform: scale(1.05);
+}
+
+.partner-card-body {
+    padding: 30px;
+}
+
+.partner-address {
+    color: var(--main-color);
+    font-weight: 500;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%231a4d8c"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>') no-repeat left center;
+    background-size: 16px;
+}
+
+.partner-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Старые стили для карточек (на всякий случай) */
+.specialty-row {
+    transition: all 0.3s ease;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.specialty-row:hover {
+    background-color: rgba(26, 77, 140, 0.02);
+}
+
+.specialty-card {
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.specialty-row:hover .specialty-card {
+    transform: scale(1.02);
+}
+
+.specialty-image img {
+    transition: transform 0.3s ease;
+    max-width: 100%;
+    height: auto;
+}
+
+.specialty-row:hover .specialty-image img {
+    transform: scale(1.05);
+}
+
+.specialty-card-horizontal {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    height: 100%;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.specialty-card-horizontal:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+}
+
+.specialty-icon {
+    font-size: 3.5rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.specialty-card-horizontal:hover .specialty-icon {
+    transform: scale(1.1);
+}
+
+.partner-card-single {
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.partner-card-single:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+}
+
+.partner-icon {
+    font-size: 4rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.partner-card-single:hover .partner-icon {
+    transform: scale(1.1);
+}
+
+/* Статистика */
+.counter {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* ===== 5. СТРАНИЦА СТУДЕНТАМ ===== */
+.schedule-page {
+    padding: 15px;
+    background: #fff;
+}
+
+.schedule-page img {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+.border-bottom {
+    border-bottom: 2px solid #eee;
+}
+
+/* ===== 6. СТРАНИЦА АБИТУРИЕНТУ ===== */
+.table-hover tbody tr:hover {
+    background-color: rgba(26, 77, 140, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+.table thead th {
+    background-color: var(--main-color);
+    color: white;
+    border-color: var(--main-color);
+}
+
+/* Карточки документов */
+.card.text-center {
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.card.text-center:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Важное сообщение */
+.abiturient-alert {
+    border-left: 5px solid var(--main-color);
+    background-color: #f0f7ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+/* ===== 7. КНОПКИ ===== */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: var(--accent-color);
+    color: white;
+    border: 2px solid white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease 0.4s both;
+}
+
+.btn:hover {
+    background: #c82333;
+    border-color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn-primary {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.btn-primary:hover {
+    background-color: #0d3a6b;
+    border-color: #0d3a6b;
+}
+
+.btn-outline-primary {
+    border-color: var(--main-color);
+    color: var(--main-color);
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+/* ===== 8. ЗАГОЛОВКИ ===== */
+h1.display-4,
+h1.display-5,
+h2.display-4,
+h2.display-5,
+h2.fw-bold,
+.section-title {
+    color: #1a4d8c;
+}
+
+.students-title,
+.abiturient-title,
+.contacts-title,
+.sveden-title {
+    color: #1a4d8c;
+}
+
+/* ===== 9. АДАПТИВНОСТЬ (МОБИЛКИ) ===== */
+@media (max-width: 991px) {
+    .navbar-nav .nav-link {
+        text-align: center;
+        padding: 12px !important;
+        margin: 5px 0;
+    }
+    
+    #themeToggle {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        margin-top: 70px;
+    }
+    
+    .display-1 {
+        font-size: 3rem;
+    }
+    
+    .specialty-row {
+        text-align: center;
+    }
+    
+    .specialty-image {
+        margin-top: 30px;
+    }
+    
+    .specialty-row:hover .specialty-card {
+        transform: none;
+    }
+    
+    .specialty-card-horizontal .row,
+    .partner-card-single .row,
+    .specialty-card-large .row,
+    .partner-card-large .row {
+        flex-direction: column;
+    }
+    
+    .specialty-icon,
+    .partner-icon {
+        font-size: 3rem;
+        margin: 20px 0;
+    }
+    
+    .specialty-card-img,
+    .partner-card-img {
+        height: 200px;
+    }
+    
+    .specialty-card-body,
+    .partner-card-body {
+        padding: 20px;
+    }
+}
+
+/* ===== 10. ТЁМНАЯ ТЕМА (ВСЁ В ОДНОМ БЛОКЕ) ===== */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Шапка */
+body.dark-mode .navbar {
+    background-color: #1e1e1e !important;
+    border-bottom: 1px solid #333;
+}
+
+body.dark-mode .navbar-brand {
+    color: #bb86fc !important;
+}
+
+body.dark-mode .navbar-nav .nav-link {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .navbar-nav .nav-link:hover {
+    background-color: #333 !important;
+    color: #bb86fc !important;
+}
+
+body.dark-mode .navbar-toggler {
+    background-color: #333;
+    border-color: #555;
+}
+
+body.dark-mode #themeToggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Карточки */
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    border-color: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .card-header {
+    background-color: #2d2d2d !important;
+    border-bottom-color: #444;
+    color: #ffffff !important;
+}
+
+body.dark-mode .card-footer {
+    background-color: #2d2d2d !important;
+    border-top-color: #444;
+}
+
+/* Карточки специальностей и партнёров */
+body.dark-mode .specialty-card-large,
+body.dark-mode .partner-card-large,
+body.dark-mode .specialty-card-horizontal,
+body.dark-mode .partner-card-single {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+body.dark-mode .specialty-card-large h3,
+body.dark-mode .partner-card-large h3,
+body.dark-mode .specialty-card-horizontal h3,
+body.dark-mode .partner-card-single h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .specialty-desc,
+body.dark-mode .partner-desc {
+    color: #b0b0b0;
+}
+
+body.dark-mode .specialty-badge {
+    background-color: #bb86fc;
+    color: #121212;
+}
+
+body.dark-mode .partner-address {
+    color: #bb86fc !important;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%23bb86fc"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>');
+}
+
+body.dark-mode .specialty-row:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Таблицы */
+body.dark-mode .table {
+    color: #e0e0e0;
+    border-color: #333;
+}
+
+body.dark-mode .table thead th {
+    background-color: #2d2d2d !important;
+    color: #ffffff !important;
+    border-color: #444;
+}
+
+body.dark-mode .table tbody tr:hover {
+    background-color: #2a2a2a !important;
+}
+
+/* Кнопки в тёмной теме */
+body.dark-mode .btn-primary {
+    background-color: #bb86fc !important;
+    border-color: #bb86fc !important;
+    color: #121212 !important;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #a370da !important;
+    border-color: #a370da !important;
+}
+
+body.dark-mode .btn-outline-primary {
+    border-color: #bb86fc !important;
+    color: #bb86fc !important;
+}
+
+body.dark-mode .btn-outline-primary:hover {
+    background-color: #bb86fc !important;
+    color: #121212 !important;
+}
+
+body.dark-mode .btn-danger {
+    background-color: #cf6679 !important;
+    border-color: #cf6679 !important;
+    color: #121212 !important;
+}
+
+body.dark-mode .btn-secondary {
+    background-color: #333 !important;
+    border-color: #444 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .hero .btn {
+    background-color: #bb86fc !important;
+    border-color: #bb86fc !important;
+    color: #121212 !important;
+}
+
+body.dark-mode .hero .btn:hover {
+    background-color: #a370da !important;
+}
+
+/* Фоны */
+body.dark-mode .bg-light {
+    background-color: #1a1a1a !important;
+}
+
+body.dark-mode .bg-white {
+    background-color: #1e1e1e !important;
+}
+
+body.dark-mode .bg-primary {
+    background-color: #bb86fc !important;
+}
+
+/* Текст */
+body.dark-mode .text-primary {
+    color: #bb86fc !important;
+}
+
+body.dark-mode .text-muted {
+    color: #999 !important;
+}
+
+body.dark-mode .lead {
+    color: #e0e0e0;
+}
+
+body.dark-mode .counter {
+    color: #bb86fc !important;
+}
+
+body.dark-mode h1.display-4,
+body.dark-mode h1.display-5,
+body.dark-mode h2.display-4,
+body.dark-mode h2.display-5,
+body.dark-mode h2.fw-bold,
+body.dark-mode .section-title,
+body.dark-mode .students-title,
+body.dark-mode .abiturient-title,
+body.dark-mode .contacts-title,
+body.dark-mode .sveden-title {
+    color: #bb86fc !important;
+}
+
+/* Формы */
+body.dark-mode .form-control {
+    background-color: #333;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .form-control:focus {
+    background-color: #3a3a3a;
+    border-color: #bb86fc;
+    color: #ffffff;
+    box-shadow: 0 0 0 0.2rem rgba(187, 134, 252, 0.25);
+}
+
+body.dark-mode .form-label {
+    color: #e0e0e0;
+}
+
+/* Алерты */
+body.dark-mode .alert-success {
+    background-color: #1e3a2a;
+    border-color: #2c4a3a;
+    color: #a8e0b0;
+}
+
+body.dark-mode .alert-info {
+    background-color: #1a3a4a;
+    border-color: #2a4a5a;
+    color: #a0d0e0;
+}
+
+body.dark-mode .alert-danger {
+    background-color: #4a1a1a;
+    border-color: #5a2a2a;
+    color: #f0b0b0;
+}
+
+body.dark-mode .alert-primary {
+    background-color: #2d1b4d !important;
+    border-color: #bb86fc !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .alert-primary h4 {
+    color: #bb86fc !important;
+}
+
+/* Модальные окна */
+body.dark-mode .modal-content {
+    background-color: #1e1e1e;
+    border-color: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .modal-header {
+    border-bottom-color: #333;
+}
+
+body.dark-mode .modal-footer {
+    border-top-color: #333;
+}
+
+body.dark-mode .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Список групп */
+body.dark-mode .list-group-item {
+    background-color: #1e1e1e;
+    border-color: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .list-group-item:hover {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode .list-group-item a {
+    color: #bb86fc;
+}
+
+/* Подвал */
+body.dark-mode footer {
+    background-color: #1a1a1a !important;
+    color: #b0b0b0;
+    border-top: 1px solid #333;
+}
+
+/* Ссылки */
+body.dark-mode a:not(.btn):not(.nav-link) {
+    color: #bb86fc;
+}
+
+body.dark-mode a:hover:not(.btn):not(.nav-link) {
+    color: #d0b0ff;
+}
+
+/* Специфические элементы */
+body.dark-mode .schedule-page {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .border-bottom {
+    border-bottom-color: #404040 !important;
+}
+
+/* Placeholder для форм в тёмной теме */
+body.dark-mode ::placeholder {
+    color: #aaa !important;
+    opacity: 1;
+}
+
+body.dark-mode :-ms-input-placeholder {
+    color: #aaa !important;
+}
+
+body.dark-mode ::-ms-input-placeholder {
+    color: #aaa !important;
+}
+
+/* Кнопки вкладок на странице "Студентам" */
+body.dark-mode .nav-tabs .nav-link {
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .nav-tabs .nav-link:hover {
+    background-color: #333;
+    border-color: #555;
+    color: #bb86fc;
+}
+
+body.dark-mode .nav-tabs .nav-link.active {
+    background-color: #bb86fc;
+    border-color: #bb86fc;
+    color: #121212 !important;
+    font-weight: 600;
+}
+
+
+/* Стили для фото руководителей (прямоугольные) */
+.director-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 300px;
+    transition: transform 0.4s ease;
+}
+
+.card.overflow-hidden {
+    overflow: hidden;
+}
+
+.card:hover .director-photo {
+    transform: scale(1.05);
+}
+
+/* Для тёмной темы */
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+body.dark-mode .text-primary {
+    color: #bb86fc !important;
+}
+
+/* Адаптивность для мобилок */
+@media (max-width: 768px) {
+    .director-photo {
+        min-height: 250px;
+    }
+}

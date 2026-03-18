@@ -1,0 +1,1 @@
+web: gunicorn apk_project.wsgi
