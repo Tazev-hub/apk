@@ -1,1 +1,1 @@
-web: gunicorn apk_project.wsgi
+web: gunicorn apk_project.wsgi --bind 0.0.0.0:$PORT
