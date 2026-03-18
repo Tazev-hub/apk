@@ -171,3 +171,24 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Whitenoise для статики
 MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+
+
+ALLOWED_HOSTS = ['apk.up.railway.app', 'localhost', '127.0.0.1']
+
+# Это для Railway
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('PGDATABASE', ''),
+        'USER': os.environ.get('PGUSER', ''),
+        'PASSWORD': os.environ.get('PGPASSWORD', ''),
+        'HOST': os.environ.get('PGHOST', ''),
+        'PORT': os.environ.get('PGPORT', ''),
+    }
+}
+
+# Whitenoise для статики
+MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
