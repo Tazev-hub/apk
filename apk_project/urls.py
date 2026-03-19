@@ -11,6 +11,7 @@ urlpatterns = [
     path('schedule/<int:schedule_id>/', views.schedule_detail_view, name='schedule_detail'),
     path('students/', views.students_view, name='students'),
     path('send-contact/', views.send_contact, name='send_contact'),
+    
 ]
 
 if settings.DEBUG:
