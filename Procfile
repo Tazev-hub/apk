@@ -1,1 +1,1 @@
-web: gunicorn apk_project.wsgi --bind 0.0.0.0:$PORT
+web: python manage.py migrate --noinput && python manage.py collectstatic --noinput && gunicorn apk_project.wsgi --bind 0.0.0.0:$PORT
