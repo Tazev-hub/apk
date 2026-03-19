@@ -17,6 +17,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['web-production-4265b.up.railway.app', 'localhost', '127.0.0.1']
 
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 CSRF_TRUSTED_ORIGINS = [
     'https://web-production-4265b.up.railway.app',
     'http://web-production-4265b.up.railway.app',
