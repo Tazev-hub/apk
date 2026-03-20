@@ -992,3 +992,9 @@ body.dark-mode .infrastructure-body p {
 body.dark-mode .infrastructure-body h4 {
     color: #ffffff;
 }
+
+/* Смещение для якорей, чтобы шапка не перекрывала */
+html {
+    scroll-padding-top: 80px;
+    scroll-behavior: smooth;
+}
