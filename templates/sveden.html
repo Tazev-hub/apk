@@ -356,4 +356,38 @@
         </div>
     </div>
 </section>
+
+<!-- Кнопка "Наверх" -->
+<button id="backToTop" title="Наверх" style="display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; background: var(--main-color); color: white; border: none; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.3); transition: all 0.3s ease;">
+    ↑
+</button>
+
+<script>
+    // Показать кнопку при прокрутке вниз
+    window.onscroll = function() {
+        const btn = document.getElementById('backToTop');
+        const footer = document.querySelector('footer');
+        const footerTop = footer ? footer.getBoundingClientRect().top : Infinity;
+        const windowHeight = window.innerHeight;
+        
+        // Показываем кнопку если прокрутили больше 300px
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btn.style.display = 'block';
+            
+            // Если кнопка доезжает до футера — поднимаем её
+            if (footerTop - windowHeight < 50) {
+                btn.style.bottom = (50 + (footerTop - windowHeight)) + 'px';
+            } else {
+                btn.style.bottom = '30px';
+            }
+        } else {
+            btn.style.display = 'none';
+        }
+    };
+    
+    // Прокрутка наверх
+    document.getElementById('backToTop').onclick = function() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+</script>
 {% endblock %}

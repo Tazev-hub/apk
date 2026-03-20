@@ -1,11 +1,16 @@
-<footer class="bg-dark text-white py-4">
-    <div class="container">
+<footer class="footer">
+    <div class="container text-center">
         <div class="row">
-            <div class="col-md-6">
-                <p class="mb-0">© 2026 АПК им. П.И. Пландина</p>
-            </div>
-            <div class="col-md-6 text-md-end">
-                <p class="mb-0">г. Арзамас, ул. Жуковского, 2</p>
+            <div class="col-12">
+                <p class="mb-2">
+                    <a href="{% url 'abiturient' %}" class="footer-link">Абитуриенту</a> &nbsp;|&nbsp;
+                    <a href="{% url 'students' %}" class="footer-link">Студентам</a> &nbsp;|&nbsp;
+                    <a href="{% url 'schedule' %}" class="footer-link">Расписание</a> &nbsp;|&nbsp;
+                    <a href="{% url 'contacts' %}" class="footer-link">Контакты</a>
+                </p>
+                <p class="small mb-0">
+                    © 2026 АПК им. П.И. Пландина
+                </p>
             </div>
         </div>
     </div>
