@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import render
-from .models import Schedule, Announcement, Material
+from .models import Schedule, Announcement, Material, ContactMessage
 from django.views.decorators.cache import cache_page
 from django.utils.decorators import method_decorator
 from django.core.mail import send_mail
@@ -91,4 +91,23 @@ def send_contact(request):
             return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
     
     return JsonResponse({'status': 'error', 'message': 'Метод не поддерживается'}, status=400)
-# Create your views here.
+
+@csrf_exempt
+def send_contact(request):
+    """Сохранение сообщения в базу данных"""
+    if request.method == 'POST':
+        name = request.POST.get('name', '')
+        email = request.POST.get('email', '')
+        message = request.POST.get('message', '')
+        
+        if name and email and message:
+            ContactMessage.objects.create(
+                name=name,
+                email=email,
+                message=message
+            )
+            return JsonResponse({'status': 'ok', 'message': 'Сообщение отправлено!'})
+        else:
+            return JsonResponse({'status': 'error', 'message': 'Заполните все поля'}, status=400)
+    
+    return JsonResponse({'status': 'error', 'message': 'Метод не поддерживается'}, status=400)
