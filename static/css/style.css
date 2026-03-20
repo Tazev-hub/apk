@@ -927,3 +927,68 @@ body.dark-mode .text-primary {
 .partner-card-footer {
     margin-top: auto;
 }
+
+/* Карточки инфраструктуры */
+.infrastructure-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.infrastructure-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.infrastructure-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.infrastructure-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.infrastructure-card:hover .infrastructure-img img {
+    transform: scale(1.05);
+}
+
+.infrastructure-body {
+    padding: 20px;
+    flex: 1;
+}
+
+.infrastructure-body h4 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.infrastructure-body p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Тёмная тема */
+body.dark-mode .infrastructure-card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+}
+
+body.dark-mode .infrastructure-body p {
+    color: #aaa;
+}
+
+body.dark-mode .infrastructure-body h4 {
+    color: #ffffff;
+}
