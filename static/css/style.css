@@ -998,3 +998,52 @@ html {
     scroll-padding-top: 80px;
     scroll-behavior: smooth;
 }
+
+/* ===== ФОТО РУКОВОДИТЕЛЕЙ (вытянутый прямоугольник) ===== */
+.director-photo {
+    width: 150px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.director-photo-sm {
+    width: 120px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.director-photo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 150px;
+}
+
+/* Для мобилок */
+@media (max-width: 768px) {
+    .director-photo {
+        width: 120px;
+        height: 140px;
+    }
+    
+    .director-photo-sm {
+        width: 100px;
+        height: 120px;
+    }
+    
+    .director-photo-wrapper {
+        margin-bottom: 15px;
+        min-height: auto;
+    }
+}
+
+/* Тёмная тема для фото */
+body.dark-mode .director-photo,
+body.dark-mode .director-photo-sm {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}

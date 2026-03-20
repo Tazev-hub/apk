@@ -1,16 +1,33 @@
 <footer class="footer">
-    <div class="container text-center">
+    <div class="container">
+        <!-- Основные ссылки -->
         <div class="row">
-            <div class="col-12">
-                <p class="mb-2">
-                    <a href="{% url 'abiturient' %}" class="footer-link">Абитуриенту</a> &nbsp;|&nbsp;
-                    <a href="{% url 'students' %}" class="footer-link">Студентам</a> &nbsp;|&nbsp;
-                    <a href="{% url 'schedule' %}" class="footer-link">Расписание</a> &nbsp;|&nbsp;
-                    <a href="{% url 'contacts' %}" class="footer-link">Контакты</a>
-                </p>
-                <p class="small mb-0">
-                    © 2026 АПК им. П.И. Пландина
-                </p>
+            <div class="col-12 text-center mb-3">
+                <a href="{% url 'abiturient' %}" class="footer-link">Абитуриенту</a> &nbsp;|&nbsp;
+                <a href="{% url 'students' %}" class="footer-link">Студентам</a> &nbsp;|&nbsp;
+                <a href="{% url 'schedule' %}" class="footer-link">Расписание</a> &nbsp;|&nbsp;
+                <a href="{% url 'contacts' %}" class="footer-link">Контакты</a> &nbsp;|&nbsp;
+                <a href="{% url 'sveden' %}" class="footer-link">Сведения</a>
+            </div>
+        </div>
+        
+        <!-- Обязательные надписи (компактно) -->
+        <div class="row">
+            <div class="col-12 text-center small text-muted">
+                Все персональные данные размещены с согласия субъекта(ов)
+            </div>
+            <div class="col-12 text-center small text-muted">
+                <a href="#" class="footer-link">Политика обработки персональных данных</a>
+            </div>
+        </div>
+        
+        <!-- Копирайт -->
+        <div class="row mt-3">
+            <div class="col-12 text-center small text-muted">
+                © 2026 АПК им. П.И. Пландина
+            </div>
+            <div class="col-12 text-center small text-muted">
+                <a href="/admin" class="footer-link">Вход для администратора</a>
             </div>
         </div>
     </div>
