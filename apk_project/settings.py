@@ -68,8 +68,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'apk_project.wsgi.application'
 
-# Database — для Railway (PostgreSQL) и локально (SQLite)
-if os.environ.get('PGDATABASE'):  # Если на Railway
+# Database — для Railway (PostgreSQL)
+if os.environ.get('PGDATABASE'): 
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',

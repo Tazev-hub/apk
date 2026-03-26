@@ -3,7 +3,7 @@ from .models import Schedule, SchedulePage, Announcement, Material, ContactMessa
 
 class SchedulePageInline(admin.TabularInline):
     model = SchedulePage
-    extra = 2  # По умолчанию показываем 2 пустых формы для загрузки страниц
+    extra = 2  #2 пустых формы для загрузки страниц
     fields = ['page_number', 'image']
 
 @admin.register(Schedule)

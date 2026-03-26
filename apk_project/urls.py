@@ -6,7 +6,7 @@ from main import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main.urls')),  # ← добавляем эту строку
+    path('', include('main.urls')), 
     path('schedule/', views.schedule_view, name='schedule'),
     path('schedule/<int:schedule_id>/', views.schedule_detail_view, name='schedule_detail'),
     path('students/', views.students_view, name='students'),
